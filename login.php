@@ -75,7 +75,7 @@ session_start();
                 event.preventDefault(); //prevent default action 
                 var post_url = $(this).attr("action"); //get form action url
 				if ($("#idCustomer").val() && $("#PasswordCustomer").val()){
-					$.post("customer/loginOrRegister.php", {
+					$.post("customer/log.php", {
 						idCustomer: $("#idCustomer").val(),
 						PasswordCustomer: $("#PasswordCustomer").val()
 					}, function(data) {

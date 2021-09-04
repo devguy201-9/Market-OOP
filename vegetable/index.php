@@ -30,9 +30,11 @@ session_start();
                 <h3>Category Name:</h3>
                 <!-- Default checkbox -->
                 <?php
-              require_once('../connect_db.php');
-              ['getAll' => $func] = require '../category/category.php';
-              $categories = $func($conn);
+             require '../class/category.php';
+             require_once('../connect_db.php');
+           //   ['getAll' => $func] = require '../category/category.php';
+             $Categories = new Category($conn);
+             $categories = $Categories->getAll();
               $res2 = "";
               for($i=0;$i<count($categories);$i++) {
                 $res2 .= "<div class=\"form-check\">

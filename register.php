@@ -85,7 +85,7 @@
                 event.preventDefault(); //prevent default action 
                 var post_url = $(this).attr("action"); //get form action url
 				if ($("#fullNameCustomer").val() && $("#passwordCustomer").val() && $("#addressCustomer").val() && $("#cityCustomer").val()){
-					$.post("customer/loginOrRegister.php", {
+					$.post("customer/log.php", {
 						fullNameCustomer: $("#fullNameCustomer").val(),
 						passwordCustomer: $("#passwordCustomer").val(),
 						addressCustomer: $("#addressCustomer").val(),

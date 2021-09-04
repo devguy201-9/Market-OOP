@@ -25,7 +25,7 @@
               <li><a href="../cart/index.php" class="nav-link">Card</a></li>
 
               <li><a href="../cart/history.php" class="nav-link">History</a></li>
-              <?php if(isset($_SESSION['fullName'])){echo "<li><a href=\"../clear.php\" class=\"nav-link\">Logout</a></li>";} else {echo "<li><a href=\"../login.php\" class=\"nav-link\">Login</a></li>";} ?>
+              <?php if(isset($_SESSION['fullName'])){echo "<li><a href=\"../logout.php\" class=\"nav-link\">Logout</a></li>";} else {echo "<li><a href=\"../login.php\" class=\"nav-link\">Login</a></li>";} ?>
               <?php if(isset($_SESSION['fullName'])){
                 echo "<li><a href=\"../index.php\" class=\"nav-link\"><i class=\"fa fa-user-circle\" aria-hidden=\"true\"></i><span
                 style=\"padding-left: 10px;\">" . $_SESSION['fullName'] . "</span></a></li>";} else {echo "<li><a href=\"../register.php\" class=\"nav-link\">Register</a></li>";}?>

@@ -44,7 +44,6 @@
         },
         'add' => function($conn, $vegetable) {
             $query ="INSERT INTO `vegetable`(`CategoryID`, `VegetableName`, `Unit`, `Amount`, `Image`, `Price`) VALUES  (".$vegetable[0].",\"".$vegetable[1]."\",\"".$vegetable[2]."\",".$vegetable[3].",\"".$vegetable[4]."\",".$vegetable[5].")";
-            echo $query;
             $result = mysqli_query($conn,$query);
             if(!$result) {
                 return false;

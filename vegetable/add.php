@@ -36,8 +36,10 @@ if(isset($_POST["vegetableName"])) {
     }
     $res = "";
     require_once('../connect_db.php');
-    ['add' => $func] = require 'vegetable.php';
-    $productCreate = $func($conn,array($categoryID,$vegetableName,$vegetableUnit,$vegetableAmount,$image,$vegetablePrice));
+    require '../class/vegetable.php';
+        $Vegetables = new Vegetable($conn);
+        $productCreate = $Vegetables->add(array($categoryID,$vegetableName,$vegetableUnit,$vegetableAmount,$image,$vegetablePrice));
+    
     require_once('../close_db.php');
     if($productCreate) {
         $res = "<script>alert('Đã thêm sản phẩm thành công !');location.reload();</script>";

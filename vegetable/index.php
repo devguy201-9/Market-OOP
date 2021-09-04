@@ -32,7 +32,6 @@ session_start();
                 <?php
              require '../class/category.php';
              require_once('../connect_db.php');
-           //   ['getAll' => $func] = require '../category/category.php';
              $Categories = new Category($conn);
              $categories = $Categories->getAll();
               $res2 = "";
@@ -56,8 +55,9 @@ session_start();
             <div class="container d-flex justify-content-center mt-50 mb-50">
                 <div class="row" id="products">
                     <?php
-              ['getAll' => $func] = require 'vegetable.php';
-              $vegetables = $func($conn);
+              require '../class/vegetable.php';
+        $Vegetables = new Vegetable($conn);
+        $vegetables = $Vegetables->getAll();
               require_once('../close_db.php');
               $res = "";
               for($i=0;$i<count($vegetables);$i++) {

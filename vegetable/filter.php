@@ -2,8 +2,9 @@
     $res = "";
     require_once('../connect_db.php');
     $filterIDs = $_POST["filterIDs"];
-    ['getListByCateIDs' => $func] = require 'vegetable.php';
-    $vegetables = $func($conn,$filterIDs);
+    require '../class/vegetable.php';
+        $Vegetables = new Vegetable($conn);
+        $vegetables = $Vegetables->getListByCateIDs($filterIDs);
     $res = "";
               for($i=0;$i<count($vegetables);$i++) {
                 $price = intval($vegetables[$i]['Price']);

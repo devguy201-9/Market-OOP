@@ -42,9 +42,10 @@ session_start();
                         <div class="input-group mb-3">
                             <select class="custom-select" id="inputGroupSelect02">
                                 <?php
+              require '../class/category.php';
               require_once('../connect_db.php');
-              ['getAll' => $func] = require '../category/category.php';
-              $categories = $func($conn);
+              $Categories = new Category($conn);
+              $categories = $Categories->getAll();
               require_once('../close_db.php');
               for($i=0;$i<count($categories);$i++) {
                 echo "<option value=\"".$categories[$i]['CategoryID']."\">".$categories[$i]['Name']."</option>";

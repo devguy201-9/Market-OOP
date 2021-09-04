@@ -1,8 +1,9 @@
 <?php
     if(isset($_POST["nameCategory"])) {
+        require '../class/category.php';
         require_once('../connect_db.php');
-        ['add' => $func] = require 'category.php';
-        $flag = $func($conn,array($_POST["nameCategory"],$_POST["descriptionCategory"]));
+        $Categories = new Category($conn);
+        $flag = $Categories->add(array($_POST["nameCategory"],$_POST["descriptionCategory"]));
         require_once('../close_db.php');
         if($flag) {
             echo "<script>alert('Đã thêm loại sản phẩm thành công !');location.reload();</script>";

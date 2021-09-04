@@ -7,13 +7,13 @@ class Customer{
     }
 
     public function getByIDAndPassword($customer){
-        $query ="SELECT * FROM `customers` WHERE `CustomerID` = $$customer[0] AND `Password` = \"$customer[1] \"";
-            $result = mysqli_query($this->conn,$query);
-            $data = array();
-            while($row = mysqli_fetch_array($result)){
-                $data[] = $row;
-            }
-            return $data;
+        $query ="SELECT * FROM `customers` WHERE `CustomerID` = $customer[0] AND `Password` = \"$customer[1] \"";
+        $result = mysqli_query($this->conn,$query);
+        $data = array();
+        while($row = mysqli_fetch_array($result)){
+            $data[] = $row;
+        }
+        return $data;
     }
 
     public function getByID($id){

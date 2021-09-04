@@ -59,9 +59,10 @@ session_start();
                 </thead>
                 <tbody>
                     <?php
+              require '../class/category.php';
               require_once('../connect_db.php');
-              ['getAll' => $func] = require 'category.php';
-              $categories = $func($conn);
+              $Categories = new Category($conn);
+              $categories = $Categories->getAll();
               require_once('../close_db.php');
               for($i=0;$i<count($categories);$i++) {
                 echo "<tr>

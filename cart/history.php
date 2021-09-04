@@ -45,8 +45,9 @@ session_start();
                             <?php
                             require_once('../connect_db.php');
                             if(isset($_SESSION['fullName'])){
-                                  ['getAllOrder' => $func] = require 'order.php';
-                                  $orders = $func($conn,$_SESSION['customerID']);
+                                require '../class/order.php';
+                                $Orders = new Order($conn);
+                                $orders = $Orders->getAllOrder($_SESSION['customerID']);
                                   for($i=0;$i<count($orders);$i++) {
                                     $price = intval($orders[$i]['Total']);
                                     $price1 =  number_format($price, 0, '', '.');                    

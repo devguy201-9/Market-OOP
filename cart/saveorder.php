@@ -1,6 +1,5 @@
 <?php
     session_start();
-    // $idCustomer = $_SESSION['customerID'];
     $idCustomer = $_POST["idCustomer"];
     $res = "";
     require_once('../connect_db.php');
@@ -10,15 +9,14 @@
             for($i=0;$i<count($_SESSION['cart']);$i++) {
                 $total += $_SESSION['cart'][$i][2];
             }
-            ['addOrder' => $func] = require 'order.php';
-            $order = $func($conn,array($idCustomer,$total));
-            echo $idCustomer;
+            require '../class/order.php';
+            $Orders = new Order($conn);
+            $order = $Orders->addOrder(array($idCustomer,$total));
             if($order != -1){
-                ['addDetail' => $func2] = require 'order.php';
-                ['decreaseVegetable' => $func3] = require 'order.php';
+                $Orders = new Order($conn);
                 for($i=0;$i<count($_SESSION['cart']);$i++) {
-                    $order2 = $func2($conn,array($order,$_SESSION['cart'][$i][0],$_SESSION['cart'][$i][1],$_SESSION['cart'][$i][2]));
-                    $decrease = $func3($conn,$_SESSION['cart'][$i][0],$_SESSION['cart'][$i][1]);
+                    $order2 = $Orders->addDetail(array($order,$_SESSION['cart'][$i][0],$_SESSION['cart'][$i][1],$_SESSION['cart'][$i][2]));
+                    $decrease = $Orders->decreaseVegetable($_SESSION['cart'][$i][0],$_SESSION['cart'][$i][1]);
                 }
                 $res .= "<script>alert('Bạn đã mua hàng thành công !');location.reload();</script>";
                 $_SESSION['cart'] = array();

@@ -59,8 +59,9 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on'){
                             $totalTemp = 0;
                             $amount = 0;
                             if(isset($_SESSION['fullName'])){
-                                  ['getOrderDetail' => $func] = require 'order.php';
-                                  $order = $func($conn,$idOrder,$_SESSION['customerID']);
+                                  require '../class/order.php';
+                                $Orders = new Order($conn);
+                                $order = $Orders->getOrderDetail($idOrder,$_SESSION['customerID']);
                                   for($i=0;$i<count($order);$i++) {
                                     $price = intval($order[$i]['Price']);
                                     $price1 =  number_format($price, 0, '', '.');   

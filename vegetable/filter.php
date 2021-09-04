@@ -10,7 +10,7 @@
                 $price = intval($vegetables[$i]['Price']);
                 $price1 =  number_format($price, 0, '', '.');
                 $res .= "<div class=\"col-md-4 mt-2\">
-                <div class=\"card\">
+                <div class=\"card\" style=\"width:350px;height:456px;margin-right:370px;\">
                     <div class=\"card-body\"  style=\"width:350px;height:300px;\">
                         <div class=\"card-img-actions\"> <img
                         src=\"".$vegetables[$i]['Image']."\"

@@ -24,8 +24,8 @@ session_start();
     <?php
   include '../menu2.php'
 ?>
-<h2 style="text-align: center;">Add vegetable</h2>
-<br>
+    <h2 style="text-align: center;">Add vegetable</h2>
+    <br>
     <div style="width:50%; margin-left:25%;">
         <form id="id-form-add-vegetable" method="POST" action="" enctype="multipart/form-data">
             <!-- 2 column grid layout with text inputs for the first and last names -->

@@ -32,13 +32,13 @@ session_start();
                     <div class="col">
                         <div class="form-outline">
                             <label class="form-label" for="form3Example1">Name :</label>
-                            <input type="text" id="form3Example1" class="form-control" required=""/>
+                            <input type="text" id="form3Example1" class="form-control" required="" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
                             <label class="form-label" for="form3Example2">Description :</label>
-                            <input type="text" id="form3Example2" class="form-control" required=""/>
+                            <input type="text" id="form3Example2" class="form-control" required="" />
                         </div>
                     </div>
                 </div>
@@ -83,16 +83,16 @@ session_start();
     <script src="../js/jquery.sticky.js"></script>
     <script src="../js/main.js"></script>
     <script>
-        $("#id-form-add-category").submit(function(event) {
-                event.preventDefault(); //prevent default action 
-                var post_url = $(this).attr("action"); //get form action url
-                $.post("add.php", {
-                  nameCategory: $("#form3Example1").val(),
-                  descriptionCategory: $("#form3Example2").val()
-                }, function(data) {
-                    $("#Result").html(data);
-                });
-            });
+    $("#id-form-add-category").submit(function(event) {
+        event.preventDefault(); //prevent default action 
+        var post_url = $(this).attr("action"); //get form action url
+        $.post("add.php", {
+            nameCategory: $("#form3Example1").val(),
+            descriptionCategory: $("#form3Example2").val()
+        }, function(data) {
+            $("#Result").html(data);
+        });
+    });
     </script>
 </body>
 

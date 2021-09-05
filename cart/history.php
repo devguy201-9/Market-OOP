@@ -42,7 +42,7 @@ session_start();
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php
+                                <?php
                             require_once('../connect_db.php');
                             if(isset($_SESSION['fullName'])){
                                 require '../class/order.php';

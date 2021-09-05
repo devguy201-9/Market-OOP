@@ -22,7 +22,7 @@ session_start();
     <?php
   include '../menu2.php'
 ?>
-  <div id="Result"></div>
+    <div id="Result"></div>
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -111,25 +111,27 @@ session_start();
             } else {
                 echo "<input type=\"hidden\" id=\"idCustomer\" name=\"idCustomer\" value=\"\">";
             } ?>
-      <button type="submit" id="btnOrder" style="display:none;"></button>
-            </form>
+            <button type="submit" id="btnOrder" style="display:none;"></button>
+        </form>
     </section>
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/jquery.sticky.js"></script>
     <script src="../js/main.js"></script>
 </body>
 <script>
-    $("#id-form-order").submit(function(event) {
-        event.preventDefault(); //prevent default action 
-        var post_url = $(this).attr("action"); //get form action url
-        $.post("saveorder.php", {
-            idCustomer: $("#idCustomer").val()
-        }, function(data) {
-            $("#Result").html(data);
-        });
+$("#id-form-order").submit(function(event) {
+    event.preventDefault(); //prevent default action 
+    var post_url = $(this).attr("action"); //get form action url
+    $.post("saveorder.php", {
+        idCustomer: $("#idCustomer").val()
+    }, function(data) {
+        $("#Result").html(data);
     });
-    function order(){
-        $("#btnOrder").click();
-    }
+});
+
+function order() {
+    $("#btnOrder").click();
+}
 </script>
+
 </html>

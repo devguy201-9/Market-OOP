@@ -113,9 +113,7 @@ session_start();
             const fi = document.getElementById('inputGroupFile02');
             // Check if any file is selected.
             if (fi.files.length > 0) {
-                for (let i = 0; i <= fi.files.length - 1; i++) {
-
-                    let fsize = fi.files.item(i).size;
+                    let fsize = fi.files.item(0).size;
                     let file = Math.round((fsize / 1024));
                     // The size of the file.
                     if (file > 2048) {
@@ -144,7 +142,6 @@ session_start();
                         });
 
                     }
-                }
             }
         } else {
             alert("Only jpg/jpeg and png files are allowed!");

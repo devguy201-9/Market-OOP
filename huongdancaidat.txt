@@ -1,0 +1,5 @@
+Hướng dẫn cài đặt cấu hình cho project:
+- Bước 1: giải nén file .rar vào thư mục /htdocs trong thư mục xampp
+- Bước 2: Tạo database có tên là market trên phpmyadmin
+- Bước 3: Import file market.sql vào database market trên phpmyadmin
+- Bước 4: Truy cập vào đường link localhost chứa tên của project
